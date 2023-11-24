@@ -1,4 +1,4 @@
-from src.data_models.digital_relief_model import DigitalReliefModel
+from src.models.digital_relief_model import DigitalReliefModel
 import numpy as np
 import struct
 

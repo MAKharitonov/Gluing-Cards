@@ -1,5 +1,5 @@
 from src.data_processors.file_manager import FileManager
-from src.data_models.digital_relief_model import DigitalReliefModel
+from src.models.digital_relief_model import DigitalReliefModel
 
 import numpy as np
 
