@@ -1,0 +1,40 @@
+{ "task":
+
+	{
+	"outputFileName": "test.grd",
+	"days": 10,
+	"zones":
+		[
+			{"type": "volga",
+			"zoneLength": [5, 10, 16, 30],
+			"zoneHydrograph": [25000, 25500, 25750, 26000]},
+			{"type": "akhtuba",
+			"zoneLength": [5, 10, 16, 30],
+			"zoneHydrograph": [25000, 25500, 25750, 26000]},
+			{"type": "volgaAkhtuba",
+			"zoneLength": [5, 10, 16, 30],
+			"zoneHydrograph": [25000, 25500, 25750, 26000]
+		}
+
+		]
+	},
+
+
+			"upBoundVolgaZone": {
+			"x": [1, 4, 6, 8],
+			"y": [11, 14, 16, 18]},
+			"lowBoundAkhtubaZone":
+			{
+			"x": [12, 42, 62, 82],
+			"y": [11, 14, 16, 10]},
+
+"channels": {
+			"volga": {
+			"x": [1, 4, 6, 8],
+			"y": [11, 14, 16, 18]},
+			"akhtuba": {
+			"x": [1, 4, 6, 8],
+			"y": [11, 14, 16, 18]}
+}
+
+}
