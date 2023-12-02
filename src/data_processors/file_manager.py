@@ -1,10 +1,11 @@
 from src.models.digital_relief_model import DigitalReliefModel
 import numpy as np
 import struct
+import os
 
 class FileManager:
     """
-    Класс для работы с файлами  *.grd
+    Класс для работы с файлами
     """
 
     @staticmethod
@@ -60,3 +61,12 @@ class FileManager:
             print("An IOError has occurred!")
         finally:
             f.close()
+
+    def get_files(self, path_to_directory):
+        """
+        Получить список файлов из директории
+        :param path_to_directory:
+        :return:
+        """
+        return os.listdir(path_to_directory)
+

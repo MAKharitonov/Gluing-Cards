@@ -67,16 +67,16 @@ class MapManager:
         bound_akhtuba = self.task.low_bound_akhtuba_zone
         check = FloodCheck(bound_volga, bound_akhtuba)
 
-        #for y in range(n_y):
-            #for x in range(n_x):
-                #if check.flooding_from_akhtuba(x,y):
-                    #print("flooding_from_akhtuba")
-                #elif check.flooding_from_volga(x,y):
-                    #print("flooding_from_volga")
-                #else:
-                    #print("flooding_from_akhtuba_and_volga")
+        for y in range(n_y):
+            for x in range(n_x):
+                if check.flooding_from_akhtuba(x,y):
+                    print("flooding_from_akhtuba")
+                elif check.flooding_from_volga(x,y):
+                    print("flooding_from_volga")
+                else:
+                    print("flooding_from_akhtuba_and_volga")
 
-        return check.flooding_from_volga(x, y)
+
 
 
 
