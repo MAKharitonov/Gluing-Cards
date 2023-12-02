@@ -1,4 +1,4 @@
-from src.models.boundary import Boundary
+from src.models.piecewise_linear_function import PiecewiseLinearFunction
 from src.models.zone import Zone
 #from src.api_models.input_data import InputModel
 
@@ -13,5 +13,6 @@ class Task:
         self.low_bound_akhtuba_zone = InputModel.low_bound_akhtuba_zone
         self.volga_channels = InputModel.volga_channels
         self.akhtuba_channels = InputModel.akhtuba_channels
+        self.cell_size = InputModel.cell_size
 
 
