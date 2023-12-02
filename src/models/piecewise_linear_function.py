@@ -5,10 +5,13 @@ import numpy as np
 import sys
 
 class PiecewiseLinearFunction(BaseModel):
+    """
+    Кусочно-линейная модель
+    """
     x: List[int]
     y: List[int]
 
-    def get_number_closest_point (self, length_zone):
+    def get_number_closest_point(self, length_zone):
         """
         Получить номер ближайщей к границе зоны точки
         :param length_zone: длина зоны
