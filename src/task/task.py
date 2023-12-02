@@ -8,13 +8,15 @@ from src.models.сhannel_model import ChannelModel
 
 class Task:
 
-    def __init__(self, im):
-        self.output_file_name = im.output_file_name
-        self.days = im.days
-        self.zones = im.zones
-        self.up_bound_volga_zone = im.up_bound_volga_zone
-        self.low_bound_akhtuba_zone = im.low_bound_akhtuba_zone
-        self.volga_channel = ChannelModel(im.volga_left_coast, im.volga_right_coast)
-        self.cell_size = im.cell_size
+    def __init__(self, input_model):
+        self.output_file_name = input_model.output_file_name
+        self.path_to_map_case = input_model.path_to_map_case
+        self.days = input_model.days
+        self.zones = input_model.zones
+        self.up_bound_volga_zone = input_model.up_bound_volga_zone
+        self.low_bound_akhtuba_zone = input_model.low_bound_akhtuba_zone
+        self.volga_channel = ChannelModel(input_model.volga_left_coast, input_model.volga_right_coast)
+        self.akhtuba_channel = ChannelModel(input_model.akhtuba_left_coast, input_model.akhtuba_right_coast)
+        self.cell_size = input_model.cell_size
 
 

@@ -1,6 +1,7 @@
 from src.data_processors.file_manager import FileManager
 from src.api.input_model import InputModel
 from src.task.task import Task
+from src.map_processors.map_manager import MapManager
 import json
 
 file_manager = FileManager()
@@ -18,8 +19,11 @@ data_input = InputModel(**request)
 task = Task(data_input)
 
 t = task.volga_channel.left_coast
+p = task.path_to_map_case
+print(p)
 
-print(t)
+map_manager = MapManager(task, drm)
+print(map_manager.gluing_flood_maps(174,192))
 
 
 

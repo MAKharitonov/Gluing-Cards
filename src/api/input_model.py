@@ -8,11 +8,13 @@ from src.models.zone import Zone
 from pydantic import BaseModel, Field
 from pydantic_numpy.model import NumpyModel
 
+
 class InputModel(BaseModel):
     """
     Входные данные для задачи склейки русел
     """
     output_file_name: str = Field(alias="outputFileName")
+    path_to_map_case: str = Field(alias="pathToMapCase")
     days: int
     zones: List[Zone]
     up_bound_volga_zone: PiecewiseLinearFunction = Field(alias="upBoundVolgaZone")
@@ -21,7 +23,7 @@ class InputModel(BaseModel):
     volga_right_coast: PiecewiseLinearFunction = Field(alias="volgaRightCoast")
     akhtuba_left_coast: PiecewiseLinearFunction = Field(alias="akhtubaLeftCoast")
     akhtuba_right_coast: PiecewiseLinearFunction = Field(alias="akhtubaRightCoast")
-    cell_size: int = Field(alias = "cellSize")
+    cell_size: int = Field(alias="cellSize")
 
 
 
