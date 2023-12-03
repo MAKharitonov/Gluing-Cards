@@ -2,11 +2,13 @@ from src.data_processors.file_manager import FileManager
 from src.api.input_model import InputModel
 from src.task.task import Task
 from src.map_processors.map_manager import MapManager
+import src.app.logger
+import logging
 import json
 
 
 file_manager = FileManager()
-file_name = "C:/Users/mikhail/Dropbox/test/H_9.grd"
+file_name = "/home/mikhail/Dropbox/test/H_9.grd"
 drm = file_manager.read(file_name)
 
 
@@ -25,6 +27,7 @@ p = task.path_to_map_case
 print(p)
 
 map_manager = MapManager(task, drm)
+map_manager.calc_line_equation(1,1,10,4,5)
 #print(map_manager.gluing_flood_maps(174,192))
 
 

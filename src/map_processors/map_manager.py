@@ -1,6 +1,8 @@
 from src.task.task import Task
 from src.data_processors.file_manager import FileManager
 from src.map_processors.flood_check import FloodCheck
+from src.app.logger import logger
+
 import numpy as np
 
 
@@ -53,12 +55,17 @@ class MapManager:
         pass
 
     @staticmethod
-    def __calc_line_equation(x_a, y_a, x_b, y_b, x):
+    def calc_line_equation(x_a, y_a, x_b, y_b, x):
         """
         Уравнение прямой проходящей через точки (x_a, y_a) и (x_b, y_b)
         """
-        return ((y_b - y_a) / (x_b - x_a)) * (x - x_a) + y_a
+        try:
+            line_equation = ((y_b - y_a) / (x_b - x_a)) * (x - x_a) + y_a
+            logger.debug(f"Уравнение прямой проходящей через точки ({x_a},{y_a}) и ({x_b},{y_b}) успешно составлено.")
+        except ZeroDivisionError:
+            logger.error(f"Деление на ноль!!!")
 
+        return line_equation
 
     def gluing_flood_maps(self,x,y):
         n_x = self.drm.amount_x

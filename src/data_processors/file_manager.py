@@ -1,4 +1,5 @@
 from src.models.digital_relief_model import DigitalReliefModel
+from src.app.logger import logger
 import numpy as np
 import struct
 import os
@@ -27,11 +28,11 @@ class FileManager:
                 for y in range(amount_y):
                     temp = struct.unpack('f', f.read(4))
                     dem[x][y] = temp[0]
+            logger.debug(f"Данные файла {file_name} успешно прочитаны")
         except IOError:
-            print("An IOError has occurred!")
+            logger.error(f"Ошибка при окрытии файла {file_name}")
         finally:
             f.close()
-
         return DigitalReliefModel(amount_x, amount_y, dem, region_bound, id_surfer)#dem, region_bound[:4], amount_x, amount_y
 
     @staticmethod
@@ -57,8 +58,9 @@ class FileManager:
             for x in range(digital_relief_model.amount_x):
                 for y in range(digital_relief_model.amount_y):
                     f.write(struct.pack('f', digital_relief_model.dem[x][y]))
+            logger.debug(f"Данные успешно записаны в файл {file_name}")
         except IOError:
-            print("An IOError has occurred!")
+            logger.error(f"Ошибка при записи файла {file_name}")
         finally:
             f.close()
 
