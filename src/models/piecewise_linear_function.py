@@ -1,6 +1,5 @@
-from typing import List, Optional
-from src.models.zone import Zone
-from pydantic import BaseModel, Field, conint
+from typing import List
+from pydantic import BaseModel
 import numpy as np
 import sys
 

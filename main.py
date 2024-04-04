@@ -1,35 +1,32 @@
 from src.data_processors.file_manager import FileManager
-from src.api.input_model import InputModel
-from src.task.task import Task
-from src.map_processors.map_manager import MapManager
-import src.app.logger
-import logging
+from src.api.input_task_model import InputTaskModel
+from src.api.input_data_model import InputDataModel
+from src.models.input_data import InputData
 import json
 
 
 file_manager = FileManager()
-file_name = "/home/mikhail/Dropbox/test/H_9.grd"
+file_name = "E:/Dropbox/test/H_9.grd"
 drm = file_manager.read(file_name)
 
 
 print(drm.region_bound)
 
-with open("data/test1.json", "r", encoding='utf-8') as json_input:
+with open("data/data.json", "r", encoding='utf-8') as json_input:
+    data = json.load(json_input)
+print(data)
+
+data_model = InputDataModel(**data)
+
+input_data = InputData(data_model)
+t = input_data.volga_channel.left_coast
+
+print(t)
+
+
+with open("data/testTasks.json", "r", encoding='utf-8') as json_input:
     request = json.load(json_input)
 print(request)
 
-data_input = InputModel(**request)
-
-task = Task(data_input)
-
-t = task.volga_channel.left_coast
-p = task.path_to_map_case
-print(p)
-
-map_manager = MapManager(task, drm)
-map_manager.calc_line_equation(1,1,10,4,5)
-#print(map_manager.gluing_flood_maps(174,192))
-
-
-
+data_model = InputTaskModel(**request)
 

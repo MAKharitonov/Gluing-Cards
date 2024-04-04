@@ -1,0 +1,110 @@
+{ "tasks":
+				[
+					{
+						"outputFileName": "test.grd",
+						"days": 10,
+						"zones": [
+							{
+								"zoneType": "volga",
+								"zoneLength": [
+									5,
+									10,
+									16,
+									30
+								],
+								"zoneHydrograph": [
+									25000,
+									25500,
+									25750,
+									26000
+								]
+							},
+							{
+								"zoneType": "akhtuba",
+								"zoneLength": [
+									5,
+									10,
+									16,
+									30
+								],
+								"zoneHydrograph": [
+									25000,
+									25500,
+									25750,
+									26000
+								]
+							},
+							{
+								"zoneType": "volga_akhtuba",
+								"zoneLength": [
+									5,
+									10,
+									16,
+									30
+								],
+								"zoneHydrograph": [
+									25000,
+									25500,
+									25750,
+									26000
+								]
+							}
+						]
+					},
+					{
+						"outputFileName": "test.grd",
+						"days": 10,
+						"zones": [
+							{
+								"zoneType": "volga",
+								"zoneLength": [
+									5,
+									10,
+									16,
+									30
+								],
+								"zoneHydrograph": [
+									25000,
+									25500,
+									25750,
+									26000
+								]
+							},
+							{
+								"zoneType": "akhtuba",
+								"zoneLength": [
+									5,
+									10,
+									16,
+									30
+								],
+								"zoneHydrograph": [
+									25000,
+									25500,
+									25750,
+									26000
+								]
+							},
+							{
+								"zoneType": "volga_akhtuba",
+								"zoneLength": [
+									5,
+									10,
+									16,
+									30
+								],
+								"zoneHydrograph": [
+									25000,
+									25500,
+									25750,
+									26000
+								]
+							}
+						]
+					}
+				]
+
+
+
+
+}
